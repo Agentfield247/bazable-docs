@@ -1,0 +1,43 @@
+{
+  "name": "Bazable",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": ["introduction", "installation"]
+    },
+    {
+      "group": "Commands",
+      "pages": [
+        "commands/init",
+        "commands/extract",
+        "commands/inspect",
+        "commands/test",
+        "commands/push",
+        "commands/sync",
+        "commands/serve",
+        "commands/ui",
+        "commands/hook",
+        "commands/generate"
+      ]
+    },
+    {
+      "group": "AI & CI",
+      "pages": [
+        "commands/explain",
+        "commands/propose",
+        "commands/accept",
+        "commands/ci",
+        "commands/generate-ui",
+        "commands/mcp"
+      ]
+    },
+    {
+      "group": "Cloud Sync",
+      "pages": ["cloud/push", "cloud/sync", "cloud/device-auth"]
+    }
+  ]
+}

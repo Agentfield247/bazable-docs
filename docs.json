@@ -13,15 +13,27 @@
       "group": "Commands",
       "pages": [
         "commands/init",
+        "commands/add",
+        "commands/config",
         "commands/extract",
+        "commands/import",
         "commands/inspect",
         "commands/test",
-        "commands/push",
-        "commands/sync",
+        "commands/diff",
+        "commands/types",
+        "commands/client",
+        "commands/generate",
+        "commands/generate-ui",
+        "commands/generate-db",
+        "commands/curl",
         "commands/serve",
         "commands/ui",
+        "commands/docs",
+        "commands/export",
         "commands/hook",
-        "commands/generate"
+        "commands/errors",
+        "commands/login",
+        "commands/watch"
       ]
     },
     {
@@ -31,8 +43,9 @@
         "commands/propose",
         "commands/accept",
         "commands/ci",
-        "commands/generate-ui",
-        "commands/mcp"
+        "commands/generate-context",
+        "commands/mcp",
+        "commands/lsp"
       ]
     },
     {

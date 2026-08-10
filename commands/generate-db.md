@@ -9,7 +9,7 @@ Generates database schema (Prisma model or Supabase SQL migration) from an endpo
 ```bash
 bazable gen db <method> <url> [options]
 
-Options
+## Options
 -o, --output <dir> : Output directory (default ./generated-db)
 
 --orm <type> : ORM framework (prisma or supabase, default prisma)

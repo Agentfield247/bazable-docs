@@ -3,25 +3,45 @@
 Generates AI agent context files in your project root so that AI coding tools (Cursor, Cline, Roo Code) automatically respect your Bazable contract.
 
 ## Usage
+
 ```bash
 bazable gen context
+```
 
+## Options
 
-Generate a React + Tailwind form using AI:
-bazable gen ui POST https://api.example.com/v1/settlements --ai --framework react-tailwind
----
+- `-o, --output <dir>` : Output directory for the generated files (default is the current working directory)
 
-## 2. Update the existing UI generator page: `docs/commands/generate-ui.md`
+## What it creates
 
-Replace its content with:
+| File | Purpose |
+|------|---------|
+| `.cursorrules` | Instructions for **Cursor IDE**. Cursor reads this file and follows the rules when suggesting or writing code. |
+| `.clinerules` | Instructions for **Cline / Roo Code / VS Code** agents. These tools use the rules to avoid hallucinating API calls. |
+| `.mcp.json` | Pre‑configures **Bazable’s MCP server** as an active tool. MCP‑compatible agents (like Cursor with MCP) can then call `bazable.inspect`, `bazable.listEndpoints`, etc. directly. |
 
-```markdown
-# bazable gen ui
+## What to do after generation
 
-Generates a form component from an endpoint’s request schema.  
-By default, produces a **zero‑dependency, standalone HTML file** with embedded CSS and JavaScript.  
-You can also use `--ai` to let an LLM generate the UI for any framework.
+1. **Restart your AI coding tool** (Cursor, Cline, etc.) – it will automatically detect the new context files.
+2. **Start the MCP server** in your project directory if you want real‑time contract data:
+   ```bash
+   bazable mcp
+   ```
+3. The AI agent will now:
+   - Check `bazable.config.json` instead of inventing API endpoints.
+   - Use your generated `bazableClient` or `bazable-types` for type‑safe API calls.
+   - Verify contract compliance before proposing changes.
 
-## Usage
+## Example
+
 ```bash
-bazable gen ui <method> <url> [options]
+bazable gen context
+```
+
+After running, you’ll see:
+
+```
+✦ Generated .cursorrules
+✦ Generated .clinerules
+✦ Generated .mcp.json
+```

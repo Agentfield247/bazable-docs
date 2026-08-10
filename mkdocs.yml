@@ -1,0 +1,4 @@
+site_name: Bazable Documentation
+site_description: Git‑native API contract management CLI
+theme: readthedocs
+docs_dir: docs
